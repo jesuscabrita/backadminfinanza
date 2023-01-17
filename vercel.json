@@ -2,10 +2,15 @@
     "version": 2 ,
     "builds":[
         {
-            "src": "./server.js",
+            "src": "./server.ts",
             "use": "@vercel/node"
         }
     ],
-    "src": "/(.*)", "status": 404, "dest": "/other-404.html" ,
-    "rewrites": [{ "source": "/(.*)", "destination": "/404.js" }]
+    "routes":[
+        {
+            "src": "/(.*)",
+            "dest": "/"
+        }
+    ]
+    
 }
