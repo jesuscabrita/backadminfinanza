@@ -28,6 +28,7 @@
     "fastify-auth0-verify": "^0.8.3",
     "fastify-blipp": "^3.1.0",
     "fastify-multer": "^2.0.3",
+    "firebase": "^9.15.0",
     "http-errors": "^2.0.0",
     "isemail": "^3.2.0",
     "mongoose": "^6.6.5",
