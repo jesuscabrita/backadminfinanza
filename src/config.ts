@@ -10,4 +10,4 @@ const checkEnv = (enVar: string) => {
 };
 
 export const MONGODB = checkEnv("MONGODB");
-export const PORT = checkEnv("PORT");
+export const PORT = checkEnv("PORT" || 5000);
