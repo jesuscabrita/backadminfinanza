@@ -1,7 +1,8 @@
-import { fastify } from "fastify";
+// import { fastify } from "fastify";
 import { app } from "./app";
 import blipp from "fastify-blipp";
 import { PORT } from "./config";
+const fastify = require("fastify");
 
 const server = fastify({
   disableRequestLogging: true,
