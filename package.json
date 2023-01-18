@@ -7,7 +7,7 @@
     "dev": "nodemon src/server.ts",
     "build": "tsc",
     "postinstall": "yarn run build",
-    "start": "node src/server.js",
+    "start": "node dist/server.js",
     "seed": "ts-node src/seed.ts"
   },
   "dependencies": {
