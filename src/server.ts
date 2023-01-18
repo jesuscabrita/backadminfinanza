@@ -22,7 +22,7 @@ server.register(app);
 
 server
   .listen({
-    port: parseInt(PORT),
+    port: parseInt('5000'),
     host: "0.0.0.0",
   })
   .then(() => {
