@@ -1,11 +1,15 @@
 {
-    "version": 2 ,
-    "builds":[
-        {
-            "src": "src/server.ts",
-            "use": "@vercel/node"
-        }
-    ],
-    "rewrites": [{ "source": "/(.*)", "destination": "/server.ts" }]
+    "version": 2,
+  "name": "petgram-server-backend",
+  "alias": ["petgram-api-backend"],
+  "builds": [{ "src": "server.ts", "use": "@vercel/node" }],
+  "routes": [{
+    "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept"
+    },
+    "src": "/.*", "dest": "index.js" }
+  ]
     
 }
