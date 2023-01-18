@@ -3,9 +3,14 @@
     "builds":[
         {
             "src": "dist/server.js",
-            "use": "@vercel/node"
+            "use": "@now/node"
         }
     ],
-    "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+    "routes": [
+        { 
+            "source": "/(.*)",
+            "destination": "dist/server.js" 
+        }
+        ]
     
 }
