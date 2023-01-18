@@ -1,18 +1,11 @@
 {
-    "redirects": [
-      { "source": "/calificacion", "destination": "/calificacion" },
-      { "source": "/admin", "destination": "/admin", "permanent": false },
-      {
-        "source": "/:path((?!uk/).*)",
-        "has": [
-          {
-            "type": "header",
-            "key": "x-vercel-ip-country",
-            "value": "GB"
-          }
-        ],
-        "destination": "/uk/:path*",
-        "permanent": false
-      }
-    ]
-  }
+    "version": 2 ,
+    "builds":[
+        {
+            "src": "./server.ts",
+            "use": "@vercel/node"
+        }
+    ],
+    "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+    
+}
