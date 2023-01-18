@@ -1,9 +1,7 @@
 import fastify from "fastify";
 import { app } from "./app";
 import blipp from "fastify-blipp";
-
-
-
+import { PORT } from "./config";
 
 const server = fastify({
   disableRequestLogging: true,
@@ -21,10 +19,11 @@ const server = fastify({
 server.register(blipp);
 server.register(app);
 
-const PORT = process.env.PORT || 5000
-
 server
-  .listen(PORT)
+  .listen({
+    port: parseInt(process.env.PORT || "5000"),
+    host: "0.0.0.0",
+  })
   .then(() => {
     server.blipp();
   });
