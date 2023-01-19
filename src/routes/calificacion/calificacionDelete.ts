@@ -12,7 +12,7 @@ export const calificacion_delete: FastifyPluginAsync = async (app) => {
             const { calificacion_id } = req.params;
 
             if (isEmpty(calificacion_id)) {
-                throw new BadRequest("identifica para eliminar");
+                throw new BadRequest("identifica para eliminar.");
             }
 
             if (!Types.ObjectId.isValid( calificacion_id )) {
