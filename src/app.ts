@@ -24,7 +24,6 @@ const admin_plugin: FastifyPluginAsync = async (app) => {
   app.register(admin_deleteAll);
 };
 const calificacion_plugin: FastifyPluginAsync =async (app) =>{
-  app.addHook("preValidation", app.authenticate);
   app.register(calificacion_list);
   app.register(calificacion_get);
   app.register(calificacion_delete);

@@ -1,24 +1,26 @@
 import { FastifyPluginAsync } from "fastify";
 import { CalificacionModel } from "../../model/calificacion.model";
 
-
 export const calificacion_Edit: FastifyPluginAsync = async (app) => {
-    app.put<{ Body: { comentario: string; valor: number }
+    app.put<{ Body: { comentario: string; valor: number, name: string, imagen: string }
     }>("/",
         async (req, res) => {
 
             const data = req.body;
             req.log.info("Editado");
             console.log(data);
-            const { comentario, valor } = data;
+            const { comentario, valor,name, imagen } = data;
 
             const doc = await CalificacionModel.updateOne({
                 comentario,
                 valor,
-                user_id: (req.user as any).sub,
-            },{  comentario,
+                name,
+                imagen
+            },{ comentario,
                 valor,
-                user_id: (req.user as any).sub,});
+                name,
+                imagen
+            });
 
             return {
                 status: "Editado",
